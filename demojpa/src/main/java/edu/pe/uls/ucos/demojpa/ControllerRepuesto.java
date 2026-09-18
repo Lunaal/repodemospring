@@ -28,7 +28,7 @@ public class ControllerRepuesto {
         return mapperRepuesto.toResponse(serviceRepuesto.consultarRepuesto(id));
     }
 
-  @GetMapping("/repuesto/marca/{marca}")
+    @GetMapping("/repuesto/marca/{marca}")
     public List<ResponseRepuesto> consultarRepuestoPorMarca(@PathVariable(name = "marca") String marca) {
          return serviceRepuesto.consultarPorMarca(marca).stream().map(r->mapperRepuesto.toResponse(r)).toList();
     }
