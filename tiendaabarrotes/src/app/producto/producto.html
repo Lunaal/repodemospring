@@ -1,0 +1,35 @@
+<section class="products-section">
+  <div class="products-header">
+    <p class="section-label">NUESTRO CATÁLOGO</p>
+    <h1>Lista de productos</h1>
+    <p>
+      Consulta los productos disponibles en nuestra tienda.
+    </p>
+  </div>
+
+  <div class="table-container">
+    <table class="products-table">
+      <thead>
+        <tr>
+          <th>Código</th>
+          <th>Producto</th>
+          <th>Categoría</th>
+          <th>Precio</th>
+          <th>Stock disponible</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        @for (producto of productos; track producto.codigo) {
+          <tr>
+            <td>{{ producto.codigo }}</td>
+            <td>{{ producto.nombre }}</td>
+            <td>{{ producto.categoria }}</td>
+            <td>S/ {{ producto.precio.toFixed(2) }}</td>
+            <td>{{ producto.stock }} unidades</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</section>

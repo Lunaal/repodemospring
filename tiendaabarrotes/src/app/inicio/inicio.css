@@ -1,0 +1,267 @@
+.hero {
+  background: #f4f8f1;
+  overflow: hidden;
+}
+
+.hero-inner {
+  max-width: 1160px;
+  min-height: 510px;
+  margin: auto;
+  padding: 60px 24px;
+
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  align-items: center;
+  gap: 34px;
+}
+
+.eyebrow {
+  color: #438354;
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+h1 {
+  max-width: 590px;
+  margin: 22px 0 18px;
+  color: #183d2b;
+  font-size: clamp(38px, 5vw, 50px);
+  line-height: 1.08;
+  letter-spacing: -2px;
+}
+
+h1 em {
+  color: #4c9259;
+  font-style: normal;
+}
+
+.hero-copy p {
+  color: #69776c;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+  margin-top: 28px;
+}
+
+.primary-btn,
+.secondary-btn {
+  padding: 14px 19px;
+  border-radius: 9px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.primary-btn {
+  background: #267447;
+  color: white;
+}
+
+.primary-btn:hover {
+  background: #1b5c36;
+}
+
+.secondary-btn {
+  color: #315a3e;
+  background: white;
+  border: 1px solid #dce8da;
+}
+
+.trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  margin-top: 28px;
+  color: #738176;
+  font-size: 11px;
+}
+
+.hero-art {
+  position: relative;
+  min-height: 390px;
+  display: grid;
+  place-items: center;
+}
+
+.art-circle {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: #e4efdc;
+}
+
+.basket {
+  position: relative;
+  width: 260px;
+  height: 240px;
+  margin-top: 85px;
+}
+
+.basket-body {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 0;
+  height: 145px;
+
+  background: repeating-linear-gradient(
+    90deg,
+    #b77c43 0 12px,
+    #c99056 12px 24px
+  );
+
+  border: 9px solid #986338;
+  border-radius: 14px 14px 42px 42px;
+}
+
+.food {
+  position: absolute;
+  z-index: 2;
+  font-size: 65px;
+}
+
+.food-one {
+  left: 22px;
+  top: 12px;
+}
+
+.food-two {
+  left: 83px;
+  top: -13px;
+}
+
+.food-three {
+  right: 25px;
+  top: 26px;
+}
+
+.food-four {
+  left: 70px;
+  top: 57px;
+}
+
+.food-five {
+  right: 62px;
+  top: 70px;
+}
+
+.art-card {
+  position: absolute;
+  z-index: 3;
+  top: 35px;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 12px 15px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 12px 28px #243d2415;
+}
+
+.art-card > span {
+  font-size: 25px;
+}
+
+.art-card b,
+.art-card small {
+  display: block;
+}
+
+.art-card b {
+  color: #294b35;
+  font-size: 11px;
+}
+
+.art-card small {
+  color: #8a978c;
+  font-size: 10px;
+}
+
+.benefits {
+  max-width: 1110px;
+  margin: auto;
+  padding: 26px 24px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.benefits article {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+}
+
+.benefits article > span {
+  font-size: 22px;
+}
+
+.benefits b,
+.benefits small {
+  display: block;
+}
+
+.benefits b {
+  color: #294b35;
+  font-size: 12px;
+}
+
+.benefits small {
+  color: #89948b;
+  margin-top: 5px;
+  font-size: 10px;
+}
+
+.welcome {
+  text-align: center;
+  padding: 58px 24px 65px;
+}
+
+.welcome h2 {
+  color: #1c422e;
+  font-size: 29px;
+}
+
+.welcome p {
+  max-width: 550px;
+  margin: auto;
+  color: #778379;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.welcome a {
+  display: inline-block;
+  margin-top: 20px;
+  color: #347b49;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+@media (max-width: 760px) {
+
+  .hero-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-art {
+    min-height: 340px;
+  }
+
+  .benefits {
+    grid-template-columns: 1fr;
+  }
+
+}
