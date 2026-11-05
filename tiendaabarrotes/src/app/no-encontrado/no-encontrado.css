@@ -1,93 +1,90 @@
 .not-found {
-  min-height: 590px;
-  padding: 55px 22px;
-
+  min-height: 80vh;
+  padding: 60px 24px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-
+  justify-content: center;
+  background: #f4f8f1;
   text-align: center;
-
-  background: radial-gradient(
-    circle at 50% 38%,
-    #f0f7ed 0,
-    #f8faf6 35%,
-    white 72%
-  );
 }
 
-.illustration {
+.not-found-content {
   position: relative;
-  width: 170px;
-  height: 155px;
-
-  display: grid;
-  place-items: center;
-
-  margin-bottom: 20px;
-  border-radius: 50%;
-  background: #e9f2e4;
+  max-width: 600px;
 }
 
-.bag {
-  font-size: 83px;
+.error-number {
+  color: #267447;
+  font-size: clamp(100px, 20vw, 180px);
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -10px;
 }
 
-.question {
+.error-decoration {
+  position: relative;
+  width: 100px;
+  height: 50px;
+  margin: 0 auto 20px;
+}
+
+.decoration-circle {
   position: absolute;
-  top: 4px;
-  right: 5px;
-
   width: 42px;
   height: 42px;
-
-  display: grid;
-  place-items: center;
-
+  left: 8px;
+  top: 0;
   border-radius: 50%;
-  color: white;
-  background: #6c9f69;
-
-  font-size: 25px;
-  font-weight: bold;
+  background: #dcebd4;
 }
 
-.error-code {
-  color: #57905d;
+.decoration-square {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  right: 8px;
+  bottom: 0;
+  border-radius: 8px;
+  background: #b9d7b7;
+  transform: rotate(15deg);
+}
+
+.error-label {
+  color: #438354;
   font-size: 11px;
   font-weight: bold;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
 }
 
 .not-found h1 {
-  max-width: 540px;
-  margin: 13px 0;
-
-  color: #1b402d;
-  font-size: 39px;
+  margin: 16px 0;
+  color: #183d2b;
+  font-size: clamp(27px, 5vw, 38px);
 }
 
 .not-found p {
-  max-width: 500px;
-  color: #778379;
-  font-size: 13px;
+  max-width: 470px;
+  margin: 0 auto;
+  color: #69776c;
+  font-size: 14px;
   line-height: 1.8;
 }
 
-.not-found a {
-  margin-top: 25px;
-  padding: 13px 20px;
-
-  border-radius: 9px;
-  background: #267447;
-  color: white;
-
-  text-decoration: none;
-  font-size: 12px;
+.error-note {
+  margin-top: 35px;
+  color: #438354;
+  font-size: 10px;
   font-weight: bold;
+  letter-spacing: 2px;
 }
 
-.not-found a:hover {
-  background: #1b5c36;
+@media (max-width: 600px) {
+  .not-found {
+    min-height: 75vh;
+    padding: 40px 20px;
+  }
+
+  .error-number {
+    letter-spacing: -5px;
+  }
 }
