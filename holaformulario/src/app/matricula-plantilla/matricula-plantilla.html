@@ -1,0 +1,152 @@
+
+<h2>FORMULARIO DE MATRÍCULA</h2>
+
+<form #miForm="ngForm" (ngSubmit)="onSubmit(miForm)">
+
+
+  <div>
+    <label>Nombre:</label>
+    <input type="text"  name="nombre" ngModel required  #nombre="ngModel">
+    <div class="error" *ngIf="nombre.invalid && nombre.touched">
+      <span *ngIf="nombre.errors?.['required']">
+        El nombre es obligatorio.
+      </span>
+    </div>
+  </div>
+
+  <div>
+    <label>Apellido:</label>
+    <input  type="text" name="apellido" ngModel required #apellido="ngModel">
+    <div class="error" *ngIf="apellido.invalid && apellido.touched">
+      El apellido es obligatorio
+    </div>
+  </div>
+
+  <div>
+    <label>DNI:</label>
+    <input type="text" name="dni" ngModel required minlength="8"  maxlength="8" pattern="[0-9]{8}"#dni="ngModel">
+    <div class="error" *ngIf="dni.invalid && dni.touched">
+      <span *ngIf="dni.errors?.['required']">
+        El DNI es obligatorio.
+      </span>
+      <span *ngIf="dni.errors?.['minlength']">
+        El DNI debe tener mínimo 8 dígitos.
+      </span>
+      <span *ngIf="dni.errors?.['maxlength']">
+        El DNI debe tener máximo 8 dígitos.
+      </span>
+      
+    </div>
+  </div>
+
+  <div>
+    <label>Email:</label>
+    <input  type="email" name="email" ngModel required email #email="ngModel">
+    <div class="error" *ngIf="email.invalid && email.touched">
+      Ingrese un correo electrónico válido.
+    </div>
+  </div>
+
+  <div>
+    <label>Edad:</label>
+    <input type="number" name="edad" ngModel required min="18" max="60" #edad="ngModel">
+    <div class="error" *ngIf="edad.invalid && edad.touched">
+      <span *ngIf="edad.errors?.['required']">
+        La edad es obligatoria.
+      </span>
+      <span *ngIf="edad.errors?.['min']">
+        La edad mínima es 18 años.
+      </span>
+      <span *ngIf="edad.errors?.['max']">
+        La edad máxima es 60 años.
+      </span>
+    </div>
+  </div>
+
+  <div>
+    <label>Carrera profesional:</label>
+    <select  name="carrera" ngModel required #carrera="ngModel">
+      <option value="">Seleccione una carrera</option>
+      <option value="Ingeniería de Sistemas">
+        Ingeniería de Sistemas
+      </option>
+      <option value="Administración">
+        Administración
+      </option>
+      <option value="Contabilidad">
+        Contabilidad
+      </option>
+      <option value="Enfermería">
+        Enfermería
+      </option>
+    </select>
+
+    <div class="error" *ngIf="carrera.invalid && carrera.touched">
+      Seleccione una carrera.
+    </div>
+  </div>
+
+  <div>
+    <label> Año académico:</label>
+
+    <div>
+      <input type="radio" name="año" value="I"  ngModel required> Primer Año
+      <input type="radio" name="año" value="II"  ngModel required> Segundo Año
+      <input type="radio" name="año" value="III"  ngModel required> Tercer Año
+      <input type="radio" name="año" value="V"  ngModel required> Cuarto Año
+      <input type="radio" name="año" value="VI"  ngModel required> Quinto Año
+    </div>
+    <div class="error" *ngIf="miForm.submitted && miForm.controls['año']?.invalid">
+       Seleccione un año académico.
+    </div>
+  </div>
+
+  <div>
+    <label>Observaciones:</label>
+    <textarea  name="observaciones"  ngModel  required minlength="5" #observaciones="ngModel">
+    </textarea>
+    <div class="error"
+      *ngIf="observaciones.invalid && observaciones.touched">
+      Escriba una observación de al menos 5 caracteres.
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="miForm.invalid"> Registrar Matrícula </button>
+
+</form>
+
+<hr>
+
+<h2>ESTUDIANTES MATRICULADOS</h2>
+
+<table *ngIf="matriculas.length > 0">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>DNI</th>
+      <th>Email</th>
+      <th>Edad</th>
+      <th>Carrera</th>
+      <th>Año</th>
+      <th>Observaciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let m of matriculas">
+      <td>{{m.nombre}}</td>
+      <td>{{m.apellido}}</td>
+      <td>{{m.dni}}</td>
+      <td>{{m.email}}</td>
+      <td>{{m.edad}}</td>
+      <td>{{m.carrera}}</td>
+      <td>{{m['año']}}</td>
+      <td>{{m.observaciones}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<p *ngIf="matriculas.length === 0">
+  No hay estudiantes matriculados todavía.
+</p>
